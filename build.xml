@@ -1,0 +1,26 @@
+<project default="xar" name="bm-fonts">
+    <xmlproperty file="expath-pkg.xml" />
+
+    <property name="app.name" value="bm-fonts" />
+    <property name="app.version" value="${app.version}" />
+    <property name="build.dir" value="build" />
+
+    <target name="xar" description="create xar file">
+        <echo message="------------------------------------------------------------" />
+        <echo message="Creating xar file..." />
+        <echo message="------------------------------------------------------------" />
+        <mkdir dir="${build.dir}" />
+        <zip destfile="${build.dir}/${app.name}.zip">
+            <fileset dir=".">
+                <include name="data/**" />
+                <exclude name="${build.dir}/**" />
+                <exclude name="tests/**" />
+                <exclude name="modules/**" />
+                <exclude name=".gitignore" />
+                <exclude name=".vscode/**" />
+            </fileset>
+            <zipfileset dir="${build.dir}" includes="expath-pkg.xml" fullpath="expath-pkg.xml" />
+            <zipfileset dir="${build.dir}" includes="repo.xml" fullpath="repo.xml" />
+        </zip>
+    </target>
+</project>

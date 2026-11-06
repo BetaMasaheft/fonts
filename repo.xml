@@ -1,0 +1,7 @@
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>Fonts use by the project https://betamasaheft.eu/</description>
+    <author>BetaMasaheft</author>
+    <website>https://betamasaheft.eu/</website>
+    <type>application</type>
+    <target>BetMasData/fonts</target>
+</meta>

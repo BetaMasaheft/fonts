@@ -1,0 +1,4 @@
+<package xmlns="http://expath.org/ns/pkg" name="https://betamasaheft.eu/betmasdata/fonts" abbrev="bm-fonts" version="0.0.1" spec="1.0">
+    <title>BetaMasaheft Fonts</title>
+    <dependency processor="http://exist-db.org" semver-min="6.4.1"/>
+</package>
