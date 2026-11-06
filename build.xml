@@ -10,17 +10,15 @@
         <echo message="Creating xar file..." />
         <echo message="------------------------------------------------------------" />
         <mkdir dir="${build.dir}" />
-        <zip destfile="${build.dir}/${app.name}.zip">
-            <fileset dir=".">
-                <include name="data/**" />
-                <exclude name="${build.dir}/**" />
-                <exclude name="tests/**" />
-                <exclude name="modules/**" />
-                <exclude name=".gitignore" />
-                <exclude name=".vscode/**" />
-            </fileset>
-            <zipfileset dir="${build.dir}" includes="expath-pkg.xml" fullpath="expath-pkg.xml" />
-            <zipfileset dir="${build.dir}" includes="repo.xml" fullpath="repo.xml" />
+        <zip destfile="${build.dir}/${app.name}.xar">
+            <zipfileset dir="data/"/>
+            <zipfileset dir="." includes="expath-pkg.xml" />
+            <zipfileset dir="." includes="repo.xml" />
+            <zipfileset dir="." includes="README.md" />
+<!--        
+            
+                 
+             -->
         </zip>
     </target>
 </project>
