@@ -1,0 +1,19 @@
+name: Deploy release for BM fonts
+
+on: [push]
+
+jobs:
+  build-and-push-image:
+      needs: test
+      # Deploy only from the default branch; feature branches and PRs get the
+      # test job but never publish an image
+      if: github.ref == 'refs/heads/main'
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout the repository
+          uses: actions/checkout@v7
+        - uses: iamkubi/github-release@2.0
+          with:
+            token: ${{ secrets.DEPLOY_PAT }}
+            tag: "0.0.1"
+  
