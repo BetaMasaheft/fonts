@@ -4,9 +4,7 @@ on: [push]
 
 jobs:
   build-and-push-image:
-      needs: test
-      # Deploy only from the default branch; feature branches and PRs get the
-      # test job but never publish an image
+      # Deploy only from the default branch
       if: github.ref == 'refs/heads/main'
       runs-on: ubuntu-latest
       permissions:
