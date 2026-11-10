@@ -22,7 +22,7 @@ jobs:
           with:
             token: ${{ secrets.DEPLOY_PAT }}
             tag: "0.0.1"
-            #files: ./build/bm-fonts.xar
-            #gzip: false
+            files: ./build/bm-fonts.xar
+            gzip: false
             allow_override: true
   
