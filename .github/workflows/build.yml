@@ -15,8 +15,8 @@ jobs:
       steps:
         - name: Checkout the repository
           uses: actions/checkout@v7
-        #- name: Build the xar package
-        #  uses: CedX/SetupAnt@v2026
+        - name: Build the xar package
+          uses: CedX/SetupAnt@v2026
         - name: Create the release
           uses: iamkubi/github-release@2.0
           with:
