@@ -32,7 +32,7 @@ jobs:
           with:
             token: ${{ secrets.DEPLOY_PAT }}
             tag: "0.0.1"
-            files: build/:/
-            gzip: folders
+            files: bm-fonts:xar
+            gzip: false
             allow_override: true
   

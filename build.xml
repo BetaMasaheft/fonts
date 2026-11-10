@@ -3,14 +3,12 @@
 
     <property name="app.name" value="bm-fonts" />
     <property name="app.version" value="${app.version}" />
-    <property name="build.dir" value="build" />
 
     <target name="xar" description="create xar file">
         <echo message="------------------------------------------------------------" />
         <echo message="Creating xar file..." />
         <echo message="------------------------------------------------------------" />
-        <mkdir dir="${build.dir}" />
-        <zip destfile="${build.dir}/${app.name}.xar">
+        <zip destfile="./${app.name}.xar">
             <zipfileset dir="data/"/>
             <zipfileset dir="." includes="expath-pkg.xml" />
             <zipfileset dir="." includes="repo.xml" />
