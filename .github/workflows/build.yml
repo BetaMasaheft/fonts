@@ -15,14 +15,24 @@ jobs:
       steps:
         - name: Checkout the repository
           uses: actions/checkout@v7
-        - name: Build the xar package
+        - name: Set up Java
+          uses: actions/setup-java@v5
+          with:
+            distribution: temurin
+            java-version: 25
+        - name: Setup Ant
           uses: CedX/SetupAnt@v2026
+          with:
+            optional-tasks: true
+            version: latest
+        - name: Build the xar package
+          run: ant
         - name: Create the release
           uses: iamkubi/github-release@2.0
           with:
             token: ${{ secrets.DEPLOY_PAT }}
             tag: "0.0.1"
-            files: build/
-            gzip: false
+            #files: build/
+            #gzip: false
             allow_override: true
   
