@@ -16,9 +16,12 @@ jobs:
         - name: Checkout the repository
           uses: actions/checkout@v7
         #- name: Build the xar package
+        #  uses: CedX/SetupAnt@v2026
         - name: Create the release
           uses: iamkubi/github-release@2.0
           with:
             token: ${{ secrets.DEPLOY_PAT }}
             tag: "0.0.1"
+            files: ./build/bm-fonts.xar
+            gzip: false
   
