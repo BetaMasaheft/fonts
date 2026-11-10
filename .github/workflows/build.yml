@@ -24,4 +24,5 @@ jobs:
             tag: "0.0.1"
             files: ./build/bm-fonts.xar
             gzip: false
+            allow_override: true
   
